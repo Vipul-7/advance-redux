@@ -2,13 +2,19 @@ import ProductItem from "./ProductItem";
 import classes from "./Products.module.css";
 
 const DUMMY_PRODUCTS = [
-  { id: "i1", price: 99, title: "AirPods", description: "Airpods from Apple" },
+  { id: "i1", price: 79, title: "AirPods", description: "Airpods from Apple" },
   {
     id: "i2",
-    price: 50,
+    price: 50.23,
     title: "Ear buds",
     description: "Ear buds from One Plus",
   },
+  {
+    id:'i3',
+    price:99,
+    title:'Apple SmartWatch',
+    description : 'Smart watch by Apple'
+  }
 ];
 
 const Products = (props) => {
