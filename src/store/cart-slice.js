@@ -5,6 +5,7 @@ const cartSlice = createSlice({
   initialState: {
     items: [],
     totalQuantity: 0,
+    changed:false // because inside app.js when first time app runs then react will also send request because in app.js cart is changed
   },
   reducers: {
     replaceCart(state,action){
@@ -14,6 +15,8 @@ const cartSlice = createSlice({
     addItemToCart(state, action) {
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
+
+      state.changed = true;
 
       state.totalQuantity++;
 
@@ -33,6 +36,8 @@ const cartSlice = createSlice({
     removeItemToCart(state, action) {
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
+
+      state.changed = true;
 
       state.totalQuantity--;
 
